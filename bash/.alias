@@ -1,0 +1,28 @@
+# Quick Switch To Directories
+alias down='cd ~/Downloads'
+alias dots='cd ~/Repositories/dotfiles/'
+alias code='cd ~/Code'
+alias blog='cd ~/Blog'
+
+# Quick Config Editing
+alias i3config='vim ~/.config/i3/config'
+alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
+alias aliasadd='vim ~/.alias'
+alias xresources='vim ~/.Xresources'
+alias polybarconf='vim ~/.config/polybar/config'
+alias reload='source ~/.bashrc'
+alias htop='htop -u kirikae'
+
+# Miscellaneous Commands
+alias ls="ls --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -hFX"
+alias ll="ls -l --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
+alias la="ls -la --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
+alias grep='grep --color=tty -d skip'
+alias cp='cp -i'
+alias df='df -h'
+alias free='free -m'
+alias rm='rm -i'
+alias mpv='mpv --shuffle'
+alias getip='grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b"'
+
