@@ -28,6 +28,9 @@ stow vim
 ```
 A note on `vim`:
 You will need to run :PlugInstall to install the plugins. These are not stored in this repo.
+Alternatively, you can simply run the following instead:
+`git clone https://github.com/kirikae/dotfile --recursive`
+This should clone any of the sub-repos (primarily vim plugins). This may change in the future as I better organise everything.
 
 Thanks to Original Authors
 --------------------------
