@@ -47,6 +47,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vis'
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
@@ -59,6 +60,10 @@ let g:airline_symbols.branch = '⭠'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" pearofducks/ansible specific settings
+let g:ansible_unindent_after_newline = 1	"Reset indentation after two newlines
+let g:ansible_extra_keywords_highlight = 1
 
 colorscheme wal
 syntax on
@@ -73,7 +78,7 @@ set noshowmode
 set ttimeoutlen=50
 set updatetime=40
 set foldmethod=marker
-let g:livepreview_previewer = 'mupdf'
+let g:livepreview_previewer = 'zathura'
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead *.tex :set spell
 autocmd BufNewFile,BufRead *.md :set spell
