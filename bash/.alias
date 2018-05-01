@@ -15,14 +15,18 @@ alias reload='source ~/.bashrc'
 alias htop='htop -u kirikae'
 
 # Miscellaneous Commands
-alias ls="ls --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -hFX"
-alias ll="ls -l --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
-alias la="ls -la --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
+alias ls="ls -v --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -hFX"
+alias ll="ls -lv --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
+alias la="ls -lav --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
+#alias tree='tree -Csuh'
+alias tree='tree -C'
 alias grep='grep --color=tty -d skip'
 alias cp='cp -i'
 alias df='df -h'
 alias free='free -m'
 alias rm='rm -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
 alias mpv='mpv --shuffle'
 alias getip='grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b"'
 
