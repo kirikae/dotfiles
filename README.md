@@ -25,6 +25,8 @@ cd dotfiles
 # To install only those dotfiles related to vim
 stow vim
 ```
+A note on `vim`:
+You will need to run :PlugInstall to install the plugins. These are not stored in this repo.
 
 Thanks to Original Authors
 --------------------------
