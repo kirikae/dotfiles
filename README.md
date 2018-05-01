@@ -10,6 +10,7 @@
 Setup Description
 -----------------
 These dotfiles are organised by role. As such, you can choose to install certain roles individually. The `./install.sh` script can be used to prompt for each role, and install, or not.
+* Shell `bash`
 * Browser `firefox`
 * Text Editor `vim`
 
