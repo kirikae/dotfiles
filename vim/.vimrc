@@ -82,12 +82,11 @@ let g:livepreview_previewer = 'zathura'
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead *.tex :set spell
 autocmd BufNewFile,BufRead *.md :set spell
-command W w !sudo tee % > /dev/null
+cmap w!! w !sudo tee % > /dev/null
 map q :q<CR>
 map <Space> za
-map <C-c> "+y
-map <S-Insert> "+p
 nnoremap <C-L> :NERDTreeTabsToggle<CR>
 nnoremap <C-T> :tabnew<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+nnoremap <F9> :setl noai nocin nosi inde=<CR>
