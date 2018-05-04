@@ -115,5 +115,3 @@ PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(
 if [[ -f ~/.aslias ]]; then
 	. ~/.alias
 fi
-
-
