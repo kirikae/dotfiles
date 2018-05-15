@@ -1,3 +1,54 @@
 [submodule "tmux/.tmux"]
 	path = tmux/.tmux
 	url = https://github.com/kirikae/.tmux.git
+[submodule "vim/.vim/plugged/ansible-vim"]
+	path = vim/.vim/plugged/ansible-vim
+	url = https://github.com/pearofducks/ansible-vim.git
+[submodule "vim/.vim/plugged/auto-pairs"]
+	path = vim/.vim/plugged/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "vim/.vim/plugged/goyo.vim"]
+	path = vim/.vim/plugged/goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule "vim/.vim/plugged/i3-vim-syntax"]
+	path = vim/.vim/plugged/i3-vim-syntax
+	url = https://github.com/PotatoesMaster/i3-vim-syntax.git
+[submodule "vim/.vim/plugged/nerdtree"]
+	path = vim/.vim/plugged/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/.vim/plugged/tabular"]
+	path = vim/.vim/plugged/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/.vim/plugged/vim-airline"]
+	path = vim/.vim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/.vim/plugged/vim-airline-themes"]
+	path = vim/.vim/plugged/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/.vim/plugged/vim-colorschemes"]
+	path = vim/.vim/plugged/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "vim/.vim/plugged/vim-fugitive"]
+	path = vim/.vim/plugged/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/.vim/plugged/vim-gitgutter"]
+	path = vim/.vim/plugged/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/.vim/plugged/vim-markdown"]
+	path = vim/.vim/plugged/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/.vim/plugged/vim-nerdtree-tabs"]
+	path = vim/.vim/plugged/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "vim/.vim/plugged/vimpager"]
+	path = vim/.vim/plugged/vimpager
+	url = https://github.com/rkitover/vimpager.git
+[submodule "vim/.vim/plugged/vim-surround"]
+	path = vim/.vim/plugged/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/.vim/plugged/vis"]
+	path = vim/.vim/plugged/vis
+	url = https://github.com/vim-scripts/vis.git
+[submodule "vim/.vim/plugged/wal.vim"]
+	path = vim/.vim/plugged/wal.vim
+	url = https://github.com/dylanaraps/wal.vim.git
