@@ -1,6 +1,6 @@
-mpd/database
-mpd/log
-mpd/pid
-mpd/state
-mpd/sticker.sql
-ncmpcpp/error.log
+mpd/.config/mpd/database
+mpd/.config/mpd/log
+mpd/.config/mpd/pid
+mpd/.config/mpd/state
+mpd/.config/mpd/sticker.sql
+ncmpcpp/.config/ncmpcpp/error.log
