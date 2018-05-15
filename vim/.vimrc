@@ -80,6 +80,9 @@ set updatetime=40
 set foldmethod=marker
 let g:livepreview_previewer = 'zathura'
 autocmd BufWritePre * %s/\s\+$//e
+set spelllang=en_au
+set spellfile=$HOME/.vim/spell/en.utf-8.add
+autocmd BufNewFile,BufRead *.txt :set spell
 autocmd BufNewFile,BufRead *.tex :set spell
 autocmd BufNewFile,BufRead *.md :set spell
 cmap w!! w !sudo tee % > /dev/null
