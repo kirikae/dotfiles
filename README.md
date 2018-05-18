@@ -17,8 +17,8 @@ These dotfiles are organised by role. As such, you can choose to install certain
 Installation
 ------------
 
-1. Clone the repo.
-`git clone https://github.com/kirikae/dotfiles`
+1. Clone the repo. (Along with the current vim plugins)
+`git clone https://github.com/kirikae/dotfiles --recursive`
 2. Change directory to dotfiles and install via GNU Stow
 ```bash
 # Change to dir
