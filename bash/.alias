@@ -3,6 +3,7 @@ alias down='cd ~/Downloads'
 alias dots='cd ~/dotfiles/'
 alias code='cd ~/Code'
 alias blog='cd ~/Blog'
+alias repos='cd ~/Repositories'
 
 # Quick Config Editing
 alias i3config='vim ~/.config/i3/config'
