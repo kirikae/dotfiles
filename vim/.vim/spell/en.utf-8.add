@@ -9,3 +9,6 @@ kickstart
 CentOS
 RHEL
 VM
+ansible
+Katello
+WIP

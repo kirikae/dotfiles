@@ -65,6 +65,10 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:ansible_unindent_after_newline = 1	"Reset indentation after two newlines
 let g:ansible_extra_keywords_highlight = 1
 
+" junegunn/goyo specific settings
+let g:goyo_width = '90%'
+let g:goyo_height = '90%'
+
 colorscheme wal
 syntax on
 set t_Co=256
@@ -80,6 +84,7 @@ set updatetime=40
 set foldmethod=marker
 let g:livepreview_previewer = 'zathura'
 autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\\+$//e
 set spelllang=en_au
 set spellfile=$HOME/.vim/spell/en.utf-8.add
 autocmd BufNewFile,BufRead *.txt :set spell
@@ -92,4 +97,5 @@ nnoremap <C-L> :NERDTreeTabsToggle<CR>
 nnoremap <C-T> :tabnew<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
-nnoremap <F9> :setl noai nocin nosi inde=<CR>
+nnoremap <F8> :setl noai nocin nosi inde=<CR>
+nnoremap <F9> :Goyo<CR>
