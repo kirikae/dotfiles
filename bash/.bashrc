@@ -22,6 +22,9 @@ export EDITOR=vim
 export BROWSER=firefox
 #export BROWSER=luakit
 
+export GEM_HOME=$HOME/gems
+export PATH=$PATH:$HOME/gems/bin
+
 source /usr/share/git-core/contrib/completion/git-prompt.sh
 
 # If not running interactively, don't do anything
@@ -103,7 +106,7 @@ bakcyn='\e[46m'		# Cyan
 bakwht='\e[47m'		# White
 txtrst='\e[0m'		# Text Reset
 
-PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\]\[\e[1;32m\]\[\e[5m \]%s\[\e[25m\]\[\e[0m\]")\n└─>\[\e[0m\] '
+PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\]\[\e[1;32m\]\[\e[5m \]%s\[\e[25m\]\[\e[0m\]")\[\e[1;37m\n└─|\[\e[0m\] '
 #PS1='\[\e[0;31m\]────── \[\e[0;32m\]\W\[\e[0m\] $(__git_ps1 "\[\e[0;33m\]at\[\e[0m\] \[\e[0;34m\]%s\[\e[0m\]") '
 #PS1='\[\e[0;35m\]$ \[\e[1;37m\]\W\[\e[0m\] $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\] \[\e[0;33m\]%s\[\e[0m\]") '
 
