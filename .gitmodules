@@ -52,3 +52,6 @@
 [submodule "vim/.vim/plugged/wal.vim"]
 	path = vim/.vim/plugged/wal.vim
 	url = https://github.com/dylanaraps/wal.vim.git
+[submodule "vim/.vim/plugged/vim-yaml"]
+	path = vim/.vim/plugged/vim-yaml
+	url = httpLs://github.com/stephpy/vim-yaml.git

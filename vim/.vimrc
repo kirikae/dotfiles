@@ -48,6 +48,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/vis'
 Plug 'pearofducks/ansible-vim'
+Plug 'stephpy/vim-yaml'
 
 call plug#end()
 
@@ -64,6 +65,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " pearofducks/ansible specific settings
 let g:ansible_unindent_after_newline = 1	"Reset indentation after two newlines
 let g:ansible_extra_keywords_highlight = 1
+let g:ansible_yamlKeyName = 'yamlKey'
 
 " junegunn/goyo specific settings
 let g:goyo_width = '90%'
@@ -90,6 +92,7 @@ set spellfile=$HOME/.vim/spell/en.utf-8.add
 autocmd BufNewFile,BufRead *.txt :set spell
 autocmd BufNewFile,BufRead *.tex :set spell
 autocmd BufNewFile,BufRead *.md :set spell
+autocmd BufNewFile,BufRead */Playbooks/*.yml :set filetype=yaml.ansible
 cmap w!! w !sudo tee % > /dev/null
 map q :q<CR>
 map <Space> za
