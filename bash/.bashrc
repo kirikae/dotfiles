@@ -37,7 +37,7 @@ HISTFILESIZE=1000000
 HISTSIZE=1000000
 HISTCONTROL=ignoredups
 HISTIGNORE='ls:clear:history:pwd:git status'
-PROMPT_COMMAND="$PROMPT_COMMMAND; history -a"
+PROMPT_COMMAND='$PROMPT_COMMMAND; history -a'
 shopt -s cmdhist
 HISTTIMEFORMAT='%F %T '
 
