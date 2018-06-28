@@ -42,8 +42,8 @@ shopt -s cmdhist
 HISTTIMEFORMAT='%F %T '
 
 #########################################
-#																				#
-#	COLOURS FOR MAN PAGES									#
+#										#
+#	COLOURS FOR MAN PAGES				#
 #---------------------------------------#
 
 # Less Colors for Man Pages
@@ -72,8 +72,8 @@ export GROFF_NO_SGR=1   		# For Konsole and Gnome-terminal
 export LESS="--RAW-CONTROL-CHARS"
 
 #########################
-#												#
-#	PROMPT								#
+#						#
+#	PROMPT				#
 #-----------------------#
 
 
@@ -117,8 +117,8 @@ PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(
 #PS1='\[\e[0;35m\]$ \[\e[1;37m\]\W\[\e[0m\] $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\] \[\e[0;33m\]%s\[\e[0m\]") '
 
 #########################
-#												#
-#	ALIASES								#
+#						#
+#	ALIASES				#
 #-----------------------#
 
 if [[ -f ~/.alias ]]; then
