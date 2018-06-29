@@ -33,11 +33,11 @@ source /usr/share/git-core/contrib/completion/git-prompt.sh
 # Ensure history is written on the fly and appended each time.
 # No more lost history from closing multiple windows / panes!!
 shopt -s histappend
+PROMPT_COMMAND='$PROMPT_COMMMAND; history -a; history -n'
 HISTFILESIZE=1000000
 HISTSIZE=1000000
 HISTCONTROL=ignoredups
 HISTIGNORE='ls:clear:history:pwd:git status'
-PROMPT_COMMAND='$PROMPT_COMMMAND; history -a'
 shopt -s cmdhist
 HISTTIMEFORMAT='%F %T '
 
