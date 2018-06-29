@@ -42,6 +42,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rkitover/vimpager'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -52,13 +53,20 @@ Plug 'stephpy/vim-yaml'
 
 call plug#end()
 
+" Airline - better status/tabline
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
-
-let g:airline_symbols.maxlinenr = ' ln'
-let g:airline_symbols.branch = '⭠'
-
+let g:airline_theme																			=	'solarized'
+let g:airline_solarized_bg															=	'dark'
+let g:airline_powerline_fonts														= 1
+let g:airline#extensions#branch#enabled									=	1
+let g:airline#extensions#syntastic#enabled							=	1
+let g:airline_detect_paste															= 1
+let g:airline#extensions#whitespace#enabled							=	1
+let g:airline_detect_modified														=	1
+let g:airline_symbols.maxlinenr 												= ' ln'
+let g:airline_symbols.branch 														= '⭠'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
@@ -71,7 +79,7 @@ let g:ansible_yamlKeyName = 'yamlKey'
 let g:goyo_width = '90%'
 let g:goyo_height = '90%'
 
-colorscheme wal
+"colorscheme wal
 syntax on
 set t_Co=256
 set title
@@ -79,7 +87,7 @@ set nu
 set relativenumber
 set hidden
 set mouse=a
-set tabstop=4
+set tabstop=2
 set noshowmode
 set ttimeoutlen=50
 set updatetime=40
