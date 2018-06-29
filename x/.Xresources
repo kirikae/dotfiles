@@ -1,7 +1,7 @@
 ! Kirikaes Xresources
-URxvt*termName:			rxvt-256color
-URxvt*font:				xft:Roboto Mono for Powerline:pixelsize:11
-URxvt*boldFont:			xft:Roboto Mono for Powerline Bold:bold:pixelsize:11
+URxvt*termName:						rxvt-256color
+URxvt*font:								xft:Roboto Mono for Powerline:pixelsize:11
+URxvt*boldFont:						xft:Roboto Mono for Powerline Bold:bold:pixelsize:11
 URxvt*italicFont:		xft:Roboto Mono for Powerline Italic:italic:autohint=true:pixelsize:11
 URxvt*boldItalicFont:	xft:Roboto Mono for Powerline Bold Italic:bold:italic:autohint=true:pixelsize:11
 URxvt.saveLines:		10000
@@ -61,61 +61,50 @@ URxvt.iso14755: 		false
 URxvt.iso14755_52: 		false
 
 ! colors
-*.cursorColor:  #b3bdcb
-*.background: #404552
-*.foreground: #b3bdcb
-! Black + DarkGrey
-*.color0:  #2E3436
-*.color8:  #555753
-! DarkRed + Red
-*.color1:  #CC0000
-*.color9:  #EF2929
-! DarkGreen + Green
-*.color2:  #4E9A06
-*.color10: #8AE234
-! DarkYellow + Yellow
-*.color3:  #C4A000
-*.color11: #FCE94F
-! DarkBlue + Blue
-*.color4:  #3465A4
-*.color12: #729FCF
-! DarkMagenta + Magenta
-*.color5:  #75507B
-*.color13: #AD7FA8
-! DarkCyan + Cyan
-*.color6:  #06989A
-*.color14: #34E2E2
-! LightGrey + White
-*.color7:  #D3D7CF
-*.color15: #EEEEEC
-! for 256 color stuff
-*.color24:  #076678
-*.color66:  #427b58
-*.color88:  #9d0006
-*.color96:  #8f3f71
-*.color100: #79740e
-*.color108: #8ec07c
-*.color109: #83a598
-*.color130: #af3a03
-*.color136: #b57614
-*.color142: #b8bb26
-*.color167: #fb4934
-*.color175: #d3869b
-*.color208: #fe8019
-*.color214: #fabd2f
-*.color223: #ebdbb2
-*.color228: #f4e8ba
-*.color229: #fdf4c1
-*.color230: #ffffc8
-*.color234: #1d2021
-*.color235: #404552
-*.color236: #32302f
-*.color237: #3c3836
-*.color239: #504945
-*.color241: #665c54
-*.color243: #7c6f64
-*.color244: #928374
-*.color245: #928374
-*.color246: #a89984
-*.color248: #bdae93
-*.color250: #d5c4a1
+! Solarized Dark
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+*background:            S_base03
+*foreground:            S_base0
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
