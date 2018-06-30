@@ -1,6 +1,6 @@
 # Quick Switch To Directories
 alias down='cd ~/Downloads'
-alias dots='cd ~/dotfiles/'
+alias dots='cd ~/.dotfiles/'
 alias code='cd ~/Code'
 alias blog='cd ~/Blog'
 alias repos='cd ~/Repositories'
