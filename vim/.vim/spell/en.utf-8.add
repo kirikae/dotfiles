@@ -42,3 +42,7 @@ Ubiquiti
 BitScope
 UHS
 MicroSD
+VFIO
+IOMMU
+AMD
+PCI
