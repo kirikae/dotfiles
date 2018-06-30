@@ -4,3 +4,4 @@ mpd/.config/mpd/pid
 mpd/.config/mpd/state
 mpd/.config/mpd/sticker.sql
 ncmpcpp/.config/ncmpcpp/error.log
+vim/.vim/plugged/vis
