@@ -1,5 +1,4 @@
-
-bal]
+[global]
     font = "Lato 9"
     markup = yes
     format = "<b>%s</b>\n%b"
