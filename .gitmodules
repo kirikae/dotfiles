@@ -57,4 +57,4 @@
 	url = https://github.com/dylanaraps/wal.vim.git
 [submodule "vim/.vim/plugged/vim-yaml"]
 	path = vim/.vim/plugged/vim-yaml
-	url = httpLs://github.com/stephpy/vim-yaml.git
+	url = https://github.com/stephpy/vim-yaml.git
