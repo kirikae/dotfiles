@@ -1,14 +1,14 @@
 ! Kirikaes Xresources
 URxvt*termName:						rxvt-256color
-URxvt*font:								xft:Roboto Mono for Powerline:pixelsize:11
-URxvt*boldFont:						xft:Roboto Mono for Powerline Bold:bold:pixelsize:11
-URxvt*italicFont:		xft:Roboto Mono for Powerline Italic:italic:autohint=true:pixelsize:11
-URxvt*boldItalicFont:	xft:Roboto Mono for Powerline Bold Italic:bold:italic:autohint=true:pixelsize:11
+URxvt*font:								xft:Hasklug Nerd Font Mono:pixelsize:11
+URxvt*boldFont:						xft:Hasklug Nerd Font Mono:bold:pixelsize:11
+URxvt*italicFont:		xft:Hasklug Nerd Font Mono:italic:autohint=true:pixelsize:11
+URxvt*boldItalicFont:	xft:Hasklug Nerd Font Mono:bold:italic:autohint=true:pixelsize:11
 URxvt.saveLines:		10000
-URxvt.internalBorder:	1
+URxvt.internalBorder:	0
 URxvt.externalBorder:	0
 URxvt.scrollBar:		false
-URxvt.letterSpace:		-5
+URxvt.letterSpace:		-1
 URxvt.borderColor:		Black
 
 ! Performance
@@ -35,7 +35,7 @@ URxvt.url-launcher:		/usr/bin/luakit
 URxvt.matcher.button:		1
 
 ! DPI/Font
-Xft.dpi: 			192
+Xft.dpi: 			96
 Xft.autohint: 			0
 Xft.antialias: 			1
 Xft.hinting: 			true

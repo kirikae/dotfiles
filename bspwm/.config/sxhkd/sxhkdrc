@@ -1,41 +1,18 @@
+#
 # wm independent hotkeys
 #
-
-XF86MonBrightnessUp
-    xbacklight -inc 5
-
-XF86MonBrightnessDown
-    xbacklight -dec 5
-
-XF86AudioMute
-    amixer set Master toggle
-
-XF86Audio{Raise,Lower}Volume
-    amixer set Master {5%+,5%-} unmute
-
-XF86Audio{Play,Stop,Next,Prev}
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.{PlayPause,Stop,Next,Previous}
 
 # terminal emulator
 super + Return
 	urxvt
 
 # program launcher
-super + space
-    rofi -show run
-
-ctrl + alt + Escape
-    scrot -s
+super + @space
+	dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
-
-super + e ; {f,e,m,i}
-	{firefox-nightly,nautilus,spotify,inkscape}
-
-super + i
-	~/.core/lock.sh
 
 #
 # bspwm hotkeys
@@ -49,17 +26,29 @@ super + alt + Escape
 super + {_,shift + }w
 	bspc node -{c,k}
 
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest
+
 #
 # state/flags
 #
 
 # set the window state
-super + {y,p,shift + f,f}
+super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-super + ctrl + {a,o,e}
-	bspc node -g {locked,sticky,private}
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
 
 #
 # focus/swap
@@ -69,20 +58,31 @@ super + ctrl + {a,o,e}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the next/previous desktop
-super + {a,u}
-	bspc desktop -f {prev,next}
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus to the given desktop
-super + {_,alt + }{g,t,n,s}
-	bspc {desktop -f,node -d} '{term,web,code,chrome}'
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
-super + {shift +,shift + alt + }{g,t,n,s}
-	bspc {desktop -f,node -d} '{design,other1,other2,music}'
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
@@ -116,6 +116,6 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move a floating windowu
-super + shift + {a,e,o,u}
-bspc node -v {-20 0,0 20,0 -20,20 0}
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
