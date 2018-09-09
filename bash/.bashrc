@@ -16,14 +16,14 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-export PROJECT_HOME=$HOME/Code/
+export PROJECT_HOME=$HOME/Repositories
 export VISUAL=vim
 export EDITOR=vim
 export BROWSER=firefox
 #export BROWSER=luakit
 
 export GEM_HOME=$HOME/gems
-export PATH=$PATH:$HOME/gems/bin
+export PATH=$PATH:$HOME/gems/bin:$HOME/.config/bspwm/panel
 
 source /usr/share/git-core/contrib/completion/git-prompt.sh
 
@@ -42,8 +42,8 @@ shopt -s cmdhist
 HISTTIMEFORMAT='%F %T '
 
 #########################################
-#										#
-#	COLOURS FOR MAN PAGES				#
+#																				#
+#	COLOURS FOR MAN PAGES									#
 #---------------------------------------#
 
 # Less Colors for Man Pages
@@ -72,8 +72,8 @@ export GROFF_NO_SGR=1   		# For Konsole and Gnome-terminal
 export LESS="--RAW-CONTROL-CHARS"
 
 #########################
-#						#
-#	PROMPT				#
+#												#
+#	PROMPT								#
 #-----------------------#
 
 
@@ -112,13 +112,13 @@ bakcyn='\e[46m'		# Cyan
 bakwht='\e[47m'		# White
 txtrst='\e[0m'		# Text Reset
 
-PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\]\[\e[1;32m\]\[\e[5m \]%s\[\e[25m\]\[\e[0m\]")\[\e[1;37m\n└─>\[\e[0m\] '
+PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\]\[\e[1;32m\]\[\e[5m \]%s\[\e[25m\]\[\e[0m\]")\[\e[1;37m\n\[\e[1;37m\]└─>\[\e[0m\] '
 #PS1='\[\e[0;31m\]────── \[\e[0;32m\]\W\[\e[0m\] $(__git_ps1 "\[\e[0;33m\]at\[\e[0m\] \[\e[0;34m\]%s\[\e[0m\]") '
 #PS1='\[\e[0;35m\]$ \[\e[1;37m\]\W\[\e[0m\] $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\] \[\e[0;33m\]%s\[\e[0m\]") '
 
 #########################
-#						#
-#	ALIASES				#
+#												#
+#	ALIASES								#
 #-----------------------#
 
 if [[ -f ~/.alias ]]; then
