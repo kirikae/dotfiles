@@ -43,3 +43,4 @@ To name a couple:
 * https://github.com/dylanaraps/dotfiles
 * https://github.com/rmw5601/dotfiles
 * https://github.com/alxkt/dotfiles
+There are PLENTY more... Too many to name. Thankyou to you all for inspiration and for parts of config!

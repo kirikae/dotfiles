@@ -23,7 +23,7 @@ export BROWSER=firefox
 #export BROWSER=luakit
 
 export GEM_HOME=$HOME/gems
-export PATH=$PATH:$HOME/gems/bin:$HOME/.config/bspwm/panel
+export PATH=$PATH:$HOME/gems/bin:$HOME/.bin
 
 source /usr/share/git-core/contrib/completion/git-prompt.sh
 
