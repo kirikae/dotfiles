@@ -33,6 +33,8 @@ Alternatively, you can simply run the following instead:
 `git clone https://github.com/kirikae/dotfile --recursive`
 This should clone any of the sub-repos (primarily vim plugins). This may change in the future as I better organise everything.
 
+NOTE: This has been tested and whatnot on a Fedora 28 Minimal install.
+
 Thanks to Original Authors
 --------------------------
 Many different people have inspired the configuration and content of these dotfiles.
@@ -40,3 +42,4 @@ To name a couple:
 * https://github.com/mohabaks/dotfiles
 * https://github.com/dylanaraps/dotfiles
 * https://github.com/rmw5601/dotfiles
+* https://github.com/alxkt/dotfiles
