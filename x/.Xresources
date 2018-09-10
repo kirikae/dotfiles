@@ -1,23 +1,23 @@
 ! Kirikaes Xresources
-URxvt*termName:						rxvt-256color
-URxvt*font:								xft:Hasklug Nerd Font Mono:pixelsize:11
-URxvt*boldFont:						xft:Hasklug Nerd Font Mono:bold:pixelsize:11
-URxvt*italicFont:		xft:Hasklug Nerd Font Mono:italic:autohint=true:pixelsize:11
-URxvt*boldItalicFont:	xft:Hasklug Nerd Font Mono:bold:italic:autohint=true:pixelsize:11
-URxvt.saveLines:		10000
-URxvt.internalBorder:	0
-URxvt.externalBorder:	0
-URxvt.scrollBar:		false
-URxvt.letterSpace:		-1
-URxvt.borderColor:		Black
+URxvt*termName:								rxvt-256color
+URxvt*font:										xft:Hasklug Nerd Font Mono:pixelsize:11
+URxvt*boldFont:								xft:Hasklug Nerd Font Mono:bold:pixelsize:11
+URxvt*italicFont:							xft:Hasklug Nerd Font Mono:italic:autohint=true:pixelsize:11
+URxvt*boldItalicFont:					xft:Hasklug Nerd Font Mono:bold:italic:autohint=true:pixelsize:11
+URxvt.saveLines:							10000
+URxvt.internalBorder:					0
+URxvt.externalBorder:					0
+URxvt.scrollBar:							false
+URxvt.letterSpace:						-1
+URxvt.borderColor:						Black
 
 ! Performance
-URxvt*buffered:		 	false
-URxvt*saveLines:		0
-URxvt*skipBuiltinGlyphs:	true
-URxvt*scrollWithBuffer: 	false
-URxvt*skipScroll: 		true
-URxvt*jumpScroll: 		true
+URxvt*buffered:		 						false
+URxvt*saveLines:							0
+URxvt*skipBuiltinGlyphs:			true
+URxvt*scrollWithBuffer: 			false
+URxvt*skipScroll: 						false
+URxvt*jumpScroll: 						false
 
 ! Disable Perl for performance reasons.
 !URxvt.perl-ext: 		eval
@@ -26,39 +26,39 @@ URxvt*jumpScroll: 		true
 
 !! Perl extensions
 ! url-select (part of urxvt-perls package)
-URxvt.perl-ext-common:		default,clipboard,matcher,keyboard-select
-URxvt.keysym.M-u: perl:		url-select:select_next
-URxvt.url-select.autocopy:	true
-URxvt.url-select.button:	2
-URxvt.url-select.underline:	true
-URxvt.url-launcher:		/usr/bin/luakit
-URxvt.matcher.button:		1
+URxvt.perl-ext-common:				default,clipboard,matcher,keyboard-select
+URxvt.keysym.M-u: 						perl:		url-select:select_next
+URxvt.url-select.autocopy:		true
+URxvt.url-select.button:			2
+URxvt.url-select.underline:		true
+URxvt.url-launcher:						/usr/bin/luakit
+URxvt.matcher.button:					1
 
 ! DPI/Font
-Xft.dpi: 			96
-Xft.autohint: 			0
-Xft.antialias: 			1
-Xft.hinting: 			true
-Xft.hintstyle: 			hintslight
-Xft.rgba: 			rgb
-Xft.lcdfilter: 			lcddefault
+Xft.dpi: 											96
+Xft.autohint: 								0
+Xft.antialias: 								1
+Xft.hinting: 									true
+Xft.hintstyle: 								hintslight
+Xft.rgba: 										rgb
+Xft.lcdfilter: 								lcddefault
 
 ! Rofi
-rofi.font: 			Roboto 60
-rofi.separator-style: 		none
-rofi.scrollbar-width: 		0
-rofi.lines: 			2
-rofi.padding: 			400
-rofi.width: 			100%
-rofi.bw: 			400
+!rofi.font: 										Roboto 60
+!rofi.separator-style: 					none
+!rofi.scrollbar-width: 					0
+!rofi.lines: 										2
+!rofi.padding: 									400
+!rofi.width: 										100%
+!rofi.bw: 											400
 
 ! Enables copy/paste with Ctrl-Shift-C/V
 URxvt.keysym.Shift-Control-V: 	perl:clipboard:paste
 URxvt.keysym.Shift-Control-C: 	perl:clipboard:copy
 
 ! Disable ISO*
-URxvt.iso14755: 		false
-URxvt.iso14755_52: 		false
+URxvt.iso14755: 								false
+URxvt.iso14755_52: 							false
 
 ! colors
 ! Solarized Dark
@@ -70,7 +70,7 @@ URxvt.iso14755_52: 		false
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
-*background:            S_base03
+*background:            #282a36
 *foreground:            S_base0
 *fadeColor:             S_base03
 *cursorColor:           S_base1
@@ -108,3 +108,45 @@ URxvt.iso14755_52: 		false
 !! white dark/light
 *color7:                S_base2
 *color15:               S_base3
+
+!! firark colours
+!#define firark0 #282a36
+!#define firark1 #343746
+!#define firark2 #3e4154
+!#define firark3 #4a4e64
+!#define firark4 #e9e9e9
+!#define firark5 #efefef
+!#define firark6 #f9f9f9
+!#define firark7 #92b3ea
+!#define firark8 #a796de
+!#define firark9 #79a2e7
+!#define firark10 #9b88d9
+!#define firark11 #ff8e91
+!#define firark12 #ffac8d
+!#define firark13 #ffcb8d
+!#define firark14 #97d28b
+!#define firark15 #ff8faa
+!
+!URxvt*.foreground:   firark4
+!URxvt*.background:   firark0
+!URxvt*.cursorColor:  firark4
+!URxvt*.cursorColor2:  firark4
+!URxvt*.colorBD:  firark4
+!URxvt*.colorUL:  firark4
+!
+!*.color0: firark1
+!*.color1: firark11
+!*.color2: firark7
+!*.color3: firark10
+!*.color4: firark7
+!*.color5: firark8
+!*.color6: firark4
+!*.color7: firark12
+!*.color8: firark3
+!*.color9: firark11
+!*.color10: firark7
+!*.color11: firark13
+!*.color12: firark7
+!*.color13: firark8
+!*.color14: firark14
+!*.color15: firark15
