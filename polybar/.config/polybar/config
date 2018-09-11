@@ -136,22 +136,39 @@
 	label-private-foreground = ${self.label-foreground}
 	label-private-padding = 1
 
-label-focused = %icon%
-label-focused-foreground = #ffffff
-label-focused-underline = #4a4e64
-label-focused-font = 3
-label-focused-padding = 5
+	label-focused = %icon%
+	label-focused-foreground = #ffffff
+	label-focused-underline = #4a4e64
+	label-focused-font = 3
+	label-focused-padding = 5
+
+	label-occupied = %icon%
+	label-occupied-foreground = #f9f9f9
+	label-occupied-underline = #63f9f9f9
+	label-occupied-font = 3
+	label-occupied-padding = 5
+
+	label-urgent = %icon%
+	label-urgent-underline = #ff8e91
+	label-urgent-font = 3
+	label-urgent-padding = 5
+
+	label-empty = %icon%
+	label-empty-foreground = #63f9f9f9
+	label-empty-font = 3
+	label-empty-padding = 5
 
 
 [module/date]
 	type = internal/date
-	interval = 5
-	format-foreground = ${colors.background}
-	format-background = ${colors.foreground}
-	format-padding = 2
-	label = %time%
+	;interval = 5
+	;format-foreground = ${colors.background}
+	;format-background = ${colors.foreground}
+	;format-padding = 2
+	;label = %time%
+	date = %%{F#f9f9f9}%Y-%m-%d%%{F-}  %%{F#f9f9f9}%H:%M%%{F-}
 	time =%k:%M
-	time-alt = "%A, %B %e"
+	;time-alt = "%A, %B %e"
 
 [module/memory]
 	type = internal/memory
