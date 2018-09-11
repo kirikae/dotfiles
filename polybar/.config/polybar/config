@@ -1,76 +1,140 @@
+; ###################
+; # general settings
+; ##################
+
+[colors]
+;	aqua =
+	background = #00282a36
+;	blue =
+	foreground = #f9f9f9
+;	foreground-alt =
+	green = #859900
+	orange = #cb4b16
+;	purple =
+	red = #dc322f
+;	white =
+	yellow = #b58900
+
+[fonts]
+	0 =
+	1 =
+	2 =
+
+[global/wm]
+	margin-bottom = 4
+
+[settings]
+	screenchange-reload = true
+
+; ##################
+; # bar definitions
+; ##################
+
 [bar/top]
-width = 100%
-height = 32
+	width = 100%
+	height = 32
+	;offset-x = 33.33%
+	;offset-y = 0
+	;radius-bottom = 0
+	;radius-top = 0
+	;width = 33.33%
 
-background = #00282a36
-foreground = #f9f9f9
+	background = ${colors.background}
+	foreground = ${colors.foreground}
 
-spacing = 4
-padding-right = 5
-module-margin-left = 3
-module-margin-right = 3
+	;padding-left = 1
+	;padding-right = 0
 
-line-size = 3
+	;module-margin-left = 1
+	;module-margin-right = 1
 
-tray-position = right
+	;font-0 = ${fonts.0}
+	;font-1 = ${fonts.1}
+	;font-2 = ${fonts.2}
 
-wm-restack = bspwm
+	click-middle = polybar-msg cmd restart
+	enable-ipc = true
+	wm-restack = bspwm
 
-scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
+	tray-position = right
 
-font-0 = Lato:size=9
-font-1 = FuraCodeNerdFont:size=10
+  spacing = 4
+	padding-right = 5
+	module-margin-left = 3
+	module-margin-right = 3
 
-modules-left = bspwm
-modules-center = date
-modules-right = wireless-network backlight volume battery
+	line-size = 3
 
-[module/backlight]
-type = internal/xbacklight
-format = <label>
-label = %{F#ff8faa} %{F-}  %percentage%%
+	modules-left = bspwm
+	modules-center = date
+	modules-right = wifi_eris memory temperature volume battery powermenu
+
+; ##################
+; # module settings
+; ##################
 
 [module/battery]
-type = internal/battery
+	type = internal/battery
 
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
+	format-full <label-full>
+	format-full-foreground = ${colors.green}
+	label-full = "ICON"
 
-ramp-capacity-0 = 
-ramp-capacity-0-foreground = #ff8e91
-ramp-capacity-1 = 
-ramp-capacity-1-foreground = #ffac8d
-ramp-capacity-2 = 
-ramp-capacity-2-foreground = #ffcb8d
-ramp-capacity-3 = 
-ramp-capacity-3-foreground = #97d28b
-ramp-capacity-4 = 
-ramp-capacity-4-foreground = #92b3ea
+	format-charging = <label-charging>
+	format-charging-foreground = ${colors.yellow}
+	label-charging = "ICON"
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
-animation-charging-foreground = #ff8faa
+	format-discharging = <ramp-capacity>
+	label-discharging = %time%
+	time-format = %H:%M
+
+	ramp-capacity-0 = ICON
+	ramp-capacity-0-foreground = ${colors.red}
+	ramp-capacity-1 = ICON
+	ramp-capacity-1-foreground = ${colors.orange}
+	ramp-capacity-2 = ICON
+	ramp-capacity-2-foreground = ${colors.yellow}
+	ramp-capacity-3 = ICON
+	ramp-capacity-3-foreground = ${colors.green}
+	ramp-capacity-4 = ICON
+	ramp-capacity-4-foreground = ${colors.green}
 
 [module/bspwm]
-type = internal/bspwm
+	type = internal/bspwm
+	format = <label-state> <label-mode>
+	label-foreground = ${colors.green}
 
-ws-icon-0 = term;
-ws-icon-1 = web;
-ws-icon-2 = code;
-ws-icon-3 = design;
-ws-icon-4 = music;
-ws-icon-5 = chrome;
-ws-icon-default = 
+	label-monocle = "ICON"
+	label-monocle-foreground = ${self.label-foreground}
+	label-monocle-padding = 1
 
-pin-workspaces = true
+	label-tiled = "ICON"
+	label-tiled-foreground = ${self.label-foreground}
+	label-tiled-padding = 1
 
-format = <label-state> <label-mode>
+	label-fullscreen = "ICON"
+	label-fullscreen-foreground = ${self.label-foreground}
+	label-fullscreen-padding = 1
+
+	label-floating = "ICON"
+	label-floating-foreground = ${self.label-foreground}
+	label-floating-padding = 1
+
+	label-pseudotiled = "ICON"
+	label-pseudotiled-foreground = ${self.label-foreground}
+	label-pseudotiled-padding = 1
+
+	label-locked = "ICON"
+	label-locked-foreground = ${self.label-foreground}
+	label-locked-padding = 1
+
+	label-sticky = "ICON"
+	label-sticky-foreground = ${self.label-foreground}
+	label-sticky-padding = 1
+
+	label-private = "ICON"
+	label-private-foreground = ${self.label-foreground}
+	label-private-padding = 1
 
 label-focused = %icon%
 label-focused-foreground = #ffffff
@@ -78,123 +142,104 @@ label-focused-underline = #4a4e64
 label-focused-font = 3
 label-focused-padding = 5
 
-label-occupied = %icon%
-label-occupied-foreground = #f9f9f9
-label-occupied-underline = #63f9f9f9
-label-occupied-font = 3
-label-occupied-padding = 5
-
-label-urgent = %icon%
-label-urgent-underline = #ff8e91
-label-urgent-font = 3
-label-urgent-padding = 5
-
-label-empty = %icon%
-label-empty-foreground = #63f9f9f9
-label-empty-font = 3
-label-empty-padding = 5
 
 [module/date]
-type = internal/date
-date = %%{F#f9f9f9}%Y-%m-%d%%{F-}  %%{F#f9f9f9}%H:%M%%{F-}
-time = %H:%M
+	type = internal/date
+	interval = 5
+	format-foreground = ${colors.background}
+	format-background = ${colors.foreground}
+	format-padding = 2
+	label = %time%
+	time =%k:%M
+	time-alt = "%A, %B %e"
 
-[module/wireless-network]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
+[module/memory]
+	type = internal/memory
+	format = <ramp-used>
+	interval = 2
+	label = %percentage_used%
 
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid% (%upspeed% . %downspeed%)
-label-disconnected = %{F#ff8e91}睊%{F-}   %{F#63f9f9f9}Not connected%{F-}
-
-ramp-signal-0 = 
-ramp-signal-0-foreground = #ff8e91
-ramp-signal-1 = 
-ramp-signal-1-foreground = #ffac8d
-ramp-signal-2 = 
-ramp-signal-2-foreground = #ffcb8d
-ramp-signal-3 = 
-ramp-signal-3-foreground = #97d28b
-ramp-signal-4 = 
-ramp-signal-4-foreground = #92b3ea
-
-[module/volume]
-type = internal/pulseaudio
-
-format-volume = <ramp-volume> <label-volume>
-label-muted = %{F#ff8e91}ﱝ %{F-}  %{F#63f9f9f9}muted%{F-}
-
-ramp-volume-0 = 奄
-ramp-volume-0-foreground = #ff8e91
-ramp-volume-1 = 奔
-ramp-volume-1-foreground = #ffac8d
-ramp-volume-2 = 墳
-ramp-volume-2-foreground = #ffcb8d
-ramp-volume-3 = 墳
-ramp-volume-3-foreground = #92b3ea
+	ramp-used-0 = ICON
+	ramp-used-0-foreground = ${colors.green}
+	ramp-used-1 = ICON
+	ramp-used-1-foreground = ${colors.green}
+	ramp-used-2 = ICON
+	ramp-used-2-foreground = ${colors.yellow}
+	ramp-used-3 = ICON
+	ramp-used-3-foreground = ${colors.orange}
+	ramp-used-4 = ICON
+	ramp-used-4-foreground = ${colors.red}
 
 [module/powermenu]
-type = custom/menu
+	type = custom/menu
 
-label-open = 
-;label-open-background = #dd0000
-;label-open-foreground = #fff
-label-close = cancel
-;label-close-background = #dd0000
-;label-close-foreground = #fff
-label-open-padding = 4
-label-close-padding = 3
+	label-open = 
+	;label-open-background = #dd0000
+	;label-open-foreground = #fff
+	label-close = cancel
+	;label-close-background = #dd0000
+	;label-close-foreground = #fff
+	label-open-padding = 4
+	label-close-padding = 3
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-0-padding = 3
-menu-0-1-padding = 3
+	menu-0-0 = reboot
+	menu-0-0-exec = menu-open-1
+	menu-0-1 = power off
+	menu-0-1-exec = menu-open-2
+	menu-0-0-padding = 3
+	menu-0-1-padding = 3
 
-menu-1-0 = reboot?
-menu-1-0-exec = sudo reboot
-menu-1-0-padding = 3
+	menu-1-0 = reboot?
+	menu-1-0-exec = sudo reboot
+	menu-1-0-padding = 3
 
-menu-2-0 = power off?
-menu-2-0-exec = sudo poweroff
-menu-2-0-padding = 3
+	menu-2-0 = power off?
+	menu-2-0-exec = sudo poweroff
+	menu-2-0-padding = 3
+
+[module/volume]
+	type = internal/pulseaudio
+
+	format-volume = <ramp-volume> <label-volume>
+	label-muted = %{F#ff8e91}ﱝ %{F-}  %{F#63f9f9f9}muted%{F-}
+
+	ramp-volume-0 = 奄
+	ramp-volume-0-foreground = #ff8e91
+	ramp-volume-1 = 奔
+	ramp-volume-1-foreground = #ffac8d
+	ramp-volume-2 = 墳
+	ramp-volume-2-foreground = #ffcb8d
+	ramp-volume-3 = 墳
+	ramp-volume-3-foreground = #92b3ea
 
 [module/mpd]
-type = internal/mpd
+	type = internal/mpd
+	host = 127.0.0.1
+	port = 6600
+	interval = 1
+	click-left = xdotool set_desktop 10
+	format-online <label-song>
+	format-offline = "mpd offline"
 
-host = 127.0.0.1
-port = 6600
-password =
+	format-offline-prefix = "ICON"
+	format-offline-prefix-foreground = ${colors.red}
+	format-offline-prefix-padding = 2
 
-;Seconds to sleep between progressbar/song timer sync
-; Default: 1
-interval = 2
+	format-paused-prefix = "ICON"
+	format-paused-prefix-foreground = ${colors.yellow}
+	format-paused-prefix-padding = 2
 
-; Available tags:
-;   <label-song> (default)
-;   <label-time>
-;   <bar-progress>
-;   <toggle> - gets replaced with <icon-(pause|play)>
-;   <toggle-stop> - gets replaced with <icon-(stop|play)>
-;   <icon-random>
-;   <icon-repeat>
-;   <icon-repeatone>
-;   <icon-prev>
-;   <icon-stop>
-;   <icon-play>
-;   <icon-pause>
-;   <icon-next>
-;   <icon-seekb>
-;   <icon-seekf>
-format-online =    <label-song>
+	format-playing-prefix = "ICON"
+	format-playing-prefix-foreground = ${colors.green}
+	format-playing-prefix-padding = 2
 
-; Available tokens:
-;   %artist%
-;   %album%
-;   %date%
-;   %title%
-; Default: %artist% - %title%
-label-song = %title%
-format-online-padding = 3
+	format-stopped-prefix = "ICON"
+	format-stopped-prefix-foreground = ${colors.red}
+	format-stopped-prefix-padding = 2
+
+[module/temperature]
+	type = internal/temperature
+	interval = 2
+
+## Continue from this section, refernce:
+## https://github.com/brianclemens/brianclemens-dotfiles/blob/master/polybar/config
