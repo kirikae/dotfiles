@@ -180,5 +180,86 @@
 	type = internal/temperature
 	interval = 2
 
+	format = <ramp>
+	format-warn = <ramp> <label-warn>
+	label-warn = %temperature-c%
+	label-warn-foreground = ${colors.red}
+
+	ramp-0 = ICON
+	ramp-0-foreground = ${colors.green}
+	ramp-1 = ICON
+	ramp-1-foreground = ${colors.green}
+	ramp-2 = ICON
+	ramp-2-foreground = ${colors.green}
+	ramp-3 = ICON
+	ramp-3-foreground = ${colors.green}
+	ramp-4 = ICON
+	ramp-4-foreground = ${colors.green}
+	ramp-5 = ICON
+	ramp-5-foreground = ${colors.green}
+	ramp-6 = ICON
+	ramp-6-foreground = ${colors.yellow}
+	ramp-7 = ICON
+	ramp-7-foreground = ${colors.red}
+
+[module/volume]
+	type = interval/volume
+
+	format-volume = <ramp-volume>
+	label-volume = %percentage%
+	label-muted = ICON
+	label-muted-foreground = ${colors.orange}
+
+	ramp-volume-0 = ICON
+	ramp-volume-0-foreground = ${colors.red}
+	ramp-volume-1 = ICON
+	ramp-volume-1-foreground = ${colors.yellow}
+	ramp-volume-2 = ICON
+	ramp-volume-2-foreground = ${colors.green}
+
+[module/wifi]
+	type = internal/network
+	interval = 6
+	ping-interval = 6
+
+	format-connected = <ramp-signal> <label-connected>
+	format-packetloss = <animation-packetloss> <label-connected>
+	label-connected = %essid%
+
+	ramp-signal-0 = ICON
+	ramp-signal-0-foreground = ${colors.red}
+	ramp-signal-1 = ICON
+	ramp-signal-1-foreground = ${colors.yellow}
+	ramp-signal-2 = ICON
+	ramp-signal-2-foreground = ${colors.green}
+
+	animation-packetloss-0 = ICON
+	animation-packetloss-0-foreground = ${colors.yellow}
+	animation-packetloss-1 = ICON
+	animation-packetloss-1-foreground = ${colors.background}
+	animation-packetloss-framerate = 1000
+
+[module/wifi_eris]
+	inherit = module/wifi
+	interface = wlp2s0
+
+[module/xbacklight]
+	type = internal/xbacklight
+
+	format = <ramp> <label>
+	label = %percentage%
+
+	ramp-0 = ICON
+	ramp-0-foreground = ${colors.red}
+	ramp-1 = ICON
+	ramp-1-foreground = ${colors.yellow}
+	ramp-2 = ICON
+	ramp-2-foreground = ${colors.yellow}
+	ramp-3 = ICON
+	ramp-3-foreground = ${colors.green}
+
+[module/xwindow]
+	type = internal/xwindow
+
 ## Continue from this section, refernce:
 ## https://github.com/brianclemens/brianclemens-dotfiles/blob/master/polybar/config
