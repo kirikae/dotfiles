@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	urxvt
+	urxvt256c
 
 # program launcher
 super + @space
@@ -20,7 +20,7 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
-	killall panel && bspc quit
+	bspc quit
 
 # close and kill
 super + {_,shift + }w

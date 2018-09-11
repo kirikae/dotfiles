@@ -1,16 +1,11 @@
 #!/bin/sh
 
-PANEL_FIFO=/tmp/panel
-PANEL_HEIGHT=24
-PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
-export PANEL_FIFO PANEL_HEIGHT PANEL_FONT_FAMILY
-
 sxhkd &
 
 dunst &
 
-#$HOME/.bin/panel
-polybar top &
+# Polybar(s)
+$HOME/.config/polybar/launch.sh
 
 feh --bg-scale "$(< "${HOME}/Pictures/wallpaper.*")"
 
