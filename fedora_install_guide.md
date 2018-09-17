@@ -5,6 +5,13 @@
 ```
 # General immediate installs.
 sudo dnf install \
+xbacklight \
+xterm \
+sddm \
+mesa-dri-drivers \
+xorg-x11-drv-evdev \
+xorg-x11-drv-fbdev\
+xorg-x11-drv-synaptics \
 wpa_supplicant \
 NetworkManager-wifi \
 dnf-plugin-tracer \
@@ -41,62 +48,6 @@ stow -t ~ -d ~/Repositories/.dotfiles vim
 rm -f ~/.bash{rc,_profile}
 stow -t ~ -d ~/Repositories/.dotfiles bash
 ```
-
-Fedora 28 urxvt-unicode w/ Powerlines patch
-[Patched Powerline fonts via urxvt](https://blog.wizardsoftheweb.pro/compiling-rxvt-unicode-on-fedora-27/)
-```
-git clone https://github.com/exg/rxvt-unicode ~/Repositories/rxvt-unicode
-cd ~/Repositories/rxvt-unicode
-git submodule add https://github.com/enki/libev
-git submodule add https://github.com/yusiwen/libptytty
-
-sudo dnf install \
-git \
-gcc \
-gcc-c++ \
-perl \
-automake \
-redhat-rpm-config \
-perl-ExtUtils-ParseXS \
-libX11 \
-libX11-devel \
-libXft \
-libXft-devel
-
-# Fix a different install location for xsubpp
-ln -s /usr/share/perl5/vendor_perl/ExtUtils/xsubpp /usr/share/perl5/ExtUtils/xsubpp
-
-# Fix some issues with the Makefile under Fedora
-sed -i 's/CPPFLAGS = @CPPFLAGS@/CPPFLAGS = @CPPFLAGS@ -fPIC/' src/Makefile.in
-
-./autogen.sh
-./configure --prefix=/usr --enable-everything
-make
-# Remove repo install rxvt-unicode, in case it's present
-sudo dnf remove rxvt-unicode
-sudo make install
-```
-Alternatively, use a patched version of the code-base from CJ Harries
-```
-git clone https://github.com/thecjharries/rxvt-unicode.git --recursive ~/Repositories/rxvt-unicode
-cd ~/Repositories/rxvt-unicode
-sudo dnf install \
-git \
-gcc \
-gcc-c++ \
-perl \
-automake \
-redhat-rpm-config \
-perl-ExtUtils-ParseXS \
-libX11 \
-libX11-devel \
-libXft \
-libXft-devel
-./autogen.sh
-./configure --prefix=/usr --enable-everything && make
-sudo make install
-```
-
 
 Fedora 28 ROFI dependencies:
 [rofi: Overview and Installation](https://blog.wizardsoftheweb.pro/rofi-overview-and-installation/)
@@ -158,7 +109,6 @@ xcb-util-devel \
 xcb-proto \
 xcb-util-image-devel \
 xcb-util-wm-devel \
-\#libxcb-xrm-devel \
 xcb-util-cursor-devel \
 alsa-lib-devel \
 pulseaudio-libs-devel \
@@ -167,7 +117,8 @@ jsoncpp-devel \
 libmpdclient-devel \
 libcurl-devel \
 wireless-tools-devel \
-libn13-devel
+gcc-c++ \
+clang
 
 mkdir ~/Repositories/polybar/build
 cd ~/Repositories/polybar/build
@@ -176,6 +127,61 @@ sudo make install
 
 # If an issue arises, try with clang instead:
 cmake -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" ..
+```
+
+Fedora 28 urxvt-unicode w/ Powerlines patch
+[Patched Powerline fonts via urxvt](https://blog.wizardsoftheweb.pro/compiling-rxvt-unicode-on-fedora-27/)
+```
+git clone https://github.com/exg/rxvt-unicode ~/Repositories/rxvt-unicode
+cd ~/Repositories/rxvt-unicode
+git submodule add https://github.com/enki/libev
+git submodule add https://github.com/yusiwen/libptytty
+
+sudo dnf install \
+git \
+gcc \
+gcc-c++ \
+perl \
+automake \
+redhat-rpm-config \
+perl-ExtUtils-ParseXS \
+libX11 \
+libX11-devel \
+libXft \
+libXft-devel
+
+# Fix a different install location for xsubpp
+ln -s /usr/share/perl5/vendor_perl/ExtUtils/xsubpp /usr/share/perl5/ExtUtils/xsubpp
+
+# Fix some issues with the Makefile under Fedora
+sed -i 's/CPPFLAGS = @CPPFLAGS@/CPPFLAGS = @CPPFLAGS@ -fPIC/' src/Makefile.in
+
+./autogen.sh
+./configure --prefix=/usr --enable-everything
+make
+# Remove repo install rxvt-unicode, in case it's present
+sudo dnf remove rxvt-unicode
+sudo make install
+```
+Alternatively, use a patched version of the code-base from CJ Harries
+```
+git clone https://github.com/thecjharries/rxvt-unicode.git --recursive ~/Repositories/rxvt-unicode
+cd ~/Repositories/rxvt-unicode
+sudo dnf install \
+git \
+gcc \
+gcc-c++ \
+perl \
+automake \
+redhat-rpm-config \
+perl-ExtUtils-ParseXS \
+libX11 \
+libX11-devel \
+libXft \
+libXft-devel
+./autogen.sh
+./configure --prefix=/usr --enable-everything && make
+sudo make install
 ```
 
 Fedora 28 bspwm & sxhkd
