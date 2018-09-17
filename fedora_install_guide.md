@@ -209,16 +209,21 @@ stow -t ~ -d ~/Repositories/.dotfiles polybar
 stow -t ~ -d ~/Repositories/.dotfiles rofi
 ```
 
+Fedora 28 GUI dependencies
+```
+sudo dnf install \
+@base-x \
+lightdm \
+lightdm-gtk \
+xclip \
+mesa-vulkan-drivers \
+xscreensaver \
+```
+
 ### Random packages
 ```
-xcb-util-devel \
-xcb-util-keysyms-devel \
-xcb-util-wm-devel \
-alsa-lib-devel \
-dmenu \
-rxvt-unicode \
+
 arc-theme \
-terminus-fonts \
 dejavu-sans-mono-fonts \
 liberation-*-fonts \
 @base-x \
