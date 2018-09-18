@@ -378,3 +378,5 @@ Then run `sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg`
 
 SSDs benefit from `noatime` on the mount points (no point trying to improve performance in a way that doesn't work on SSDs).
 Make sure the mount points in `/etc/fstab` have `noatime` as an option of the mount point.
+
+Note, for touchpad configuration and such, you can refer to the following [Arch Linux XPS 15 9550](https://ahxxm.com/151.moew/#touchpad-tap-as-click-and-natural-scroll) Specifically, the "Touchpad, tap as click and natural scroll" section
