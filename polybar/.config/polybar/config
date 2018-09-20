@@ -302,8 +302,8 @@ type = custom/menu
 
 format-padding = 5
 
-label-open = 
-label-close = 
+label-open = MENU
+label-close = MENU
 
 menu-0-0 = Terminate WM
 menu-0-0-foreground = #fba922
