@@ -10,7 +10,7 @@ $HOME/.config/polybar/launch.sh
 feh --bg-scale $(ls ${HOME}/Pictures/wallpaper.*)
 
 # Rules and Config
-bspc monitor -d TERM WEB CHAT MUSIC
+bspc monitor -d term web chat music random
 
 # Global Settings
 #bspc config normal_border_color ""
@@ -28,11 +28,11 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 # Rules
-bspc rule -a Firefox desktop='^1' follow=on
-bspc rule -a TelegramDesktop desktop='^2' follow=on
-bspc rule -a Spotify desktop='^5' follow=on state=floating
-bspc rule -a KeepassXC follow=on state=floating
+bspc rule -a Firefox desktop='^2' follow=on
+bspc rule -a TelegramDesktop desktop='^3' follow=on
+bspc rule -a Spotify desktop='^4' follow=on state=floating
 
+bspc rule -a KeepassXC follow=on state=floating
 bspc rule -a Nvidia-settings follow=on state=floating
 bspc rule -a Lxappearance  follow=on state=floating
 bspc rule -a Pavucontrol  follow=on state=floating
