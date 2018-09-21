@@ -70,6 +70,8 @@ let g:goyo_height = '90%'
 " grip - Markdown preview in a browser tab
 
 
+colorscheme solarized
+set background=dark
 syntax on
 set t_Co=256
 set title
