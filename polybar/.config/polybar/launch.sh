@@ -9,6 +9,5 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bars
 polybar -q -c ~/.config/polybar/config top &
-polybar -q -c ~/.config/polybar/config bottom &
 
 notify-send "welcome to bspwm"
