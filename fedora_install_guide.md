@@ -387,9 +387,9 @@ Allow for Elite Dangerous to be played.
 ```
 sudo dnf install winetricks
 #Download and place protontricks in place
-mkdir ~/.steam/compatibilitytools.d
-wget https://github.com/redmcg/wine/releases/download/ED_Proton_3.16-4_Beta/Proton_3.16-4_Beta_ED.tar.gz ~/.steam/compatibilitytools.d
-cd ~/.steam/compatibilitytools.d/
+mkdir ~/.local/share/Steam/compatibilitytools.d
+wget https://github.com/redmcg/wine/releases/download/ED_Proton_3.16-4_Beta/Proton_3.16-4_Beta_ED.tar.gz ~/.local/share/Steam/compatibilitytools.d
+cd ~/.local/share/Steam/compatibilitytools.d/
 tar xf Proton_3.16-4_Beta_ED.tar.gz
 #Increase the File Descriptor limit in Fedora
 #See the following link for an explanation:
