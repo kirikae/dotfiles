@@ -380,3 +380,32 @@ SSDs benefit from `noatime` on the mount points (no point trying to improve perf
 Make sure the mount points in `/etc/fstab` have `noatime` as an option of the mount point.
 
 Note, for touchpad configuration and such, you can refer to the following [Arch Linux XPS 15 9550](https://ahxxm.com/151.moew/#touchpad-tap-as-click-and-natural-scroll) Specifically, the "Touchpad, tap as click and natural scroll" section
+
+## Gaming setup
+Allow for Elite Dangerous to be played.
+
+```
+sudo dnf install winetricks
+#Download and place protontricks in place
+mkdir ~/.steam/compatibilitytools.d
+wget https://github.com/redmcg/wine/releases/download/ED_Proton_3.16-4_Beta/Proton_3.16-4_Beta_ED.tar.gz ~/.steam/compatibilitytools.d
+cd ~/.steam/compatibilitytools.d/
+tar xf Proton_3.16-4_Beta_ED.tar.gz
+#Increase the File Descriptor limit in Fedora
+#See the following link for an explanation:
+# https://github.com/zfigura/wine/blob/esync/README.esync
+sudo sed -i '$i/\* hard nofile 1048576' /etc/security/limits.conf
+sudo echo "DefaultLimitNOFILE=1024:1048576" >> /etc/systemd/system.conf
+sudo echo "DefaultLimitNOFILE=1024:1048576" >> /etc/systemd/user.conf
+sudo systemctl daemon-reexec
+# Restart your session...
+```
+
+After the above, either log out, then back in, or reboot.
+
+You can check you're limits for FD via either `ulimit -n` or, in some case `ulimit -Hn` (the later may be different if `systemd` has anything to say...)
+
+Next...
+```
+protontricks 359320 dotnet40 win7
+```
