@@ -5,4 +5,5 @@ mpd/.config/mpd/state
 mpd/.config/mpd/sticker.sql
 ncmpcpp/.config/ncmpcpp/error.log
 vim/.vim/plugged*
+vim/.vim/autoload*
 *.sw*
