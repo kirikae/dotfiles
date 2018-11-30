@@ -1,4 +1,7 @@
-# Laptop Setup - Fedora 28 (2018)
+# Laptop Setup - Fedora 29 (2018)
+
+NOTE: Take everything and anything in this document with a massive grain of salt.
+This is currently a dumping ground for thoughts, and notes, on how I have my personal computing devices configured. Some stuff here may be of help. Especially if you intend to utilise SteamPlay under Fedora. (Slight differences between Ubuntu and Fedora require some tweaks to the usual guides).
 
 ## Packages
 
