@@ -15,100 +15,171 @@
 "│▒▒▒└┐▒▒▒▒▒▒▒▒▒▒┌┘░▒▒▒▒▒│▓▒▒▒▒▒▒▒│░▒▒▒▒│▓▒│░▒│▓▒│░▒│▓▒│░▒│
 "│▒▒▒▒└──────────┘░▒▒▒▒▒▒└────────┘░▒▒▒▒└──┘░▒└──┘░▒└──┘░▒│
 "│▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒│
-"└──┬─┐▓▒▒▒┌───┐▓▒┌─────┐▓▒▒▒┌───┐▓▒┌───┐▓▒▒┌─────┐▓▒▒▒┌──┘
-"   │▓│▓▒▒▒│▓▒▒│┌─┘     │▒┌─┐│   │┌─┘   │▓▒▒│     │▓┌──┘
-"   │▓│▓▒▒▒│┌──┤│▒      │▒│ ││   ││     │▓▒▒│     │▓│
-"   └─┤▓▒▒▒├┘▓▒││       │▒│ └┘   ││     │▓▒▒│     └─┘
-"     │▓┌──┘  ▒││       │▓│ ┌┐   ││     │▓▒▒│     ┌─┐
-"     │▓│     ▒││       └─┘ └┘   ││     ├─┐▓│     │▒│
-"     │┌┘      ││▒               └┘     │▒│▓│     └─┘
-"     └┘       ││                ┌┐     ├─┤▓│
-"   ┌─┐        └┘                └┘     │ └─┤
-"   │▒│                          ┌┐
-"   └─┘                          └┘     │   │
-"
-"                                           │
+"└────────────────────────────────────────────────────────┘
 
-call plug#begin()
-
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'airblade/vim-gitgutter'
-Plug 'dylanaraps/wal.vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'godlygeek/tabular'
-Plug 'jiangmiao/auto-pairs'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'junegunn/goyo.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'rkitover/vimpager'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/vis'
-Plug 'pearofducks/ansible-vim'
-Plug 'stephpy/vim-yaml'
-
-call plug#end()
-
-" Airline - better status/tabline
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+" VIM-PLUG {{{
+" Automatic Download {{{
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !mkdir -p "$HOME/.vim/autoload"
+	silent !curl -fLo "$HOME/.vim/autoload/plug.vim" 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
-let g:airline_theme																			=	'solarized'
-let g:airline_solarized_bg															=	'dark'
-let g:airline_powerline_fonts														= 1
-let g:airline#extensions#branch#enabled									=	1
-let g:airline#extensions#syntastic#enabled							=	1
-let g:airline_detect_paste															= 1
-let g:airline#extensions#whitespace#enabled							=	1
-let g:airline_detect_modified														=	1
-let g:airline_symbols.maxlinenr 												= ' ln'
-let g:airline_symbols.branch 														= '⭠'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-" pearofducks/ansible specific settings
+" }}}
+call plug#begin('~/.vim/plugged')
+" Defaults {{{
+Plug 'tpope/vim-sensible'
+call plug#load('vim-sensible')
+" }}}
+" Colours {{{
+Plug 'tyrannicaltoucan/vim-deep-space'
+" }}}
+" Highlighting / Syntax {{{
+Plug 'Valloric/MatchTagAlways'
+Plug 'guns/xterm-color-table.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'valloric/vim-operator-highlight'
+Plug 'vim-scripts/SyntaxAttr.vim'
+Plug 'whatyouhide/vim-lengthmatters'
+" }}}
+" UI {{{
+Plug 'itchyny/lightline.vim'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'szw/vim-maximizer'
+Plug 'pgdouyon/vim-evanesco'
+Plug 'ryanoasis/vim-devicons'
+Plug 'kristijanhusak/defx-icons'
+Plug 'terryma/vim-expand-region'
+"Plug 'christoomey/vim-tmux-navigator'
+Plug 'mhinz/vim-sayonara', {'on': 'Sayonara'}
+Plug 'junegunn/goyo.vim'
+" }}}
+" Editing {{{
+Plug 'tpope/vim-repeat'
+Plug 'godlygeek/tabular'
+Plug 'ogier/guessindent'
+Plug 'tpope/vim-abolish'
+Plug 'cohama/lexima.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'chaoren/vim-wordmotion'
+Plug 'dietsche/vim-lastplace'
+" }}}
+" Navigation {{{
+Plug 'wincent/ferret'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --bin'}
+Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'
+Plug 'simnalamburt/vim-mundo'
+" }}}
+" Project Structure {{{
+Plug 'tpope/vim-obsession'
+" Source Control {{{
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'whiteinge/diffconflicts'
+Plug 'chrisbra/vim-diff-enhanced'
+" }}}
+" System Tools {{{
+Plug 'tpope/vim-eunuch'
+Plug 'Shougo/vimproc', {'do': 'make'}
+" }}}
+" Code Evaluation {{{
+Plug 'nicwest/vim-http'
+Plug 'metakirby5/codi.vim'
+Plug 'thinca/vim-quickrun'
+" }}}
+" Exporting {{{
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+" }}}
+" Snippets {{{
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" }}}
+" Diagnostics {{{
+Plug 'w0rp/ale'
+" }}}
+" }}}
+" FileType {{{
+" Ansible {{{
+Plug 'pearofducks/ansible-vim'
+" }}}
+" YAML {{{
+Plug 'stephpy/vim-yaml'
+" }}}
+" Ruby {{{
+Plug 'vim-ruby/vim-ruby'
+" }}}
+" Markdown {{{
+Plug 'plasticboy/vim-markdown'
+" }}}
+" }}}
+" Speech {{{
+Plug 'rhysd/vim-grammarous'
+Plug 'phongvcao/vim-stardict'
+" }}}
+" Writting {{{
+Plug 'junegunn/vim-journal'
+Plug 'fmoralesc/vim-pad', {'branch': 'devel'}
+" }}}
+call plug#end()
+" }}}
+" Lightline - lighter status/tabline {{{
+let g:deepspace_italics																	= 1
+let g:lightline = { 'colorscheme': 'deepspace', }
+" }}}
+" pearofducks/ansible specific settings {{{
 let g:ansible_unindent_after_newline = 1	"Reset indentation after two newlines
 let g:ansible_extra_keywords_highlight = 1
 let g:ansible_yamlKeyName = 'yamlKey'
-
-" junegunn/goyo specific settings
+" }}}
+" junegunn/goyo specific settings {{{
 let g:goyo_width = '90%'
 let g:goyo_height = '90%'
-
-" grip - Markdown preview in a browser tab
-
-
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+" }}}
+" Settings {{{
+colorscheme deep-space											" Colour Scheme in use
+set termguicolors														" Enable true colour support
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set background=dark													" dark background
+set hidden																	" hide buffer without notice
+set mouse=a																	" enable mouse
+set autoread																" auto read external file changes
+set hlsearch																" highlight last searched term
+set vb t_vb=																" no visual bell
+set noshowcmd																" disable blinking cmd feedback in bottom-right corner
+set guicursor=															" disable cursor shape
+set noswapfile															" disable swap files
+set pumheight=32														" limit popup menu height
+set updatetime=300													"shorter updatetime value
+set foldmethod=marker												" fold on marks
+set spelllang=en_au													" default spelling language
+set spellfile=$HOME/.vim/spell/en.utf-8.add	" personalised spell file
+set number																	" left line numbers
+set relativenumber													" show relative line to cursor
+set expandtab shiftwidth=2									" space for tabs by default
+set tabstop=2 softtabstop=2									" double-space for a tab
+set diffopt+=internal,algorithm:patience
 syntax on
-set t_Co=256
-set title
-set nu
-set relativenumber
-set hidden
-set mouse=a
-set tabstop=2
-set noshowmode
-set ttimeoutlen=50
-set updatetime=40
-set foldmethod=marker
-let g:livepreview_previewer = 'zathura'
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/\\+$//e
-set spelllang=en_au
-set spellfile=$HOME/.vim/spell/en.utf-8.add
+" Spelling (On) {{{
 autocmd BufNewFile,BufRead *.txt :set spell
 autocmd BufNewFile,BufRead *.tex :set spell
 autocmd BufNewFile,BufRead *.md :set spell
-autocmd BufNewFile,BufRead */Playbooks/*.yml :set filetype=yaml.ansible
+" }}}
+" }}}
+" Shortcuts and more... {{{
 cmap w!! w !sudo tee % > /dev/null
 map q :q<CR>
 map <Space> za
-nnoremap <C-L> :NERDTreeTabsToggle<CR>
 nnoremap <C-T> :tabnew<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
 nnoremap <F9> :Goyo<CR>
+" }}}
+

@@ -23,9 +23,7 @@ export BROWSER=firefox
 #export BROWSER=luakit
 
 export GEM_HOME=$HOME/gems
-export PATH=$PATH:$HOME/gems/bin:$HOME/.config/bspwm/panel
-
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+export PATH=$PATH:$HOME/gems/bin:$HOME/.bin
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -36,14 +34,14 @@ shopt -s histappend
 PROMPT_COMMAND='$PROMPT_COMMMAND; history -a; history -n'
 HISTFILESIZE=1000000
 HISTSIZE=1000000
-HISTCONTROL=ignoredups
+HISTCONTROL="ignoredups"
 HISTIGNORE='ls:clear:history:pwd:git status'
 shopt -s cmdhist
 HISTTIMEFORMAT='%F %T '
 
 #########################################
-#																				#
-#	COLOURS FOR MAN PAGES									#
+#
+#	COLOURS FOR MAN PAGES
 #---------------------------------------#
 
 # Less Colors for Man Pages
@@ -72,8 +70,8 @@ export GROFF_NO_SGR=1   		# For Konsole and Gnome-terminal
 export LESS="--RAW-CONTROL-CHARS"
 
 #########################
-#												#
-#	PROMPT								#
+#
+#	PROMPT
 #-----------------------#
 
 
@@ -112,13 +110,26 @@ bakcyn='\e[46m'		# Cyan
 bakwht='\e[47m'		# White
 txtrst='\e[0m'		# Text Reset
 
-PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\]\[\e[1;32m\]\[\e[5m \]%s\[\e[25m\]\[\e[0m\]")\[\e[1;37m\n\[\e[1;37m\]└─>\[\e[0m\] '
-#PS1='\[\e[0;31m\]────── \[\e[0;32m\]\W\[\e[0m\] $(__git_ps1 "\[\e[0;33m\]at\[\e[0m\] \[\e[0;34m\]%s\[\e[0m\]") '
-#PS1='\[\e[0;35m\]$ \[\e[1;37m\]\W\[\e[0m\] $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\] \[\e[0;33m\]%s\[\e[0m\]") '
+function PARSE_GIT_BRANCH {
+  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+	  return 0
+	fi
+	GIT_BRANCH=$(git branch 2> /dev/null | sed -n '/^\*/s/\* //p')
+	if git diff --quiet 2> /dev/null >&2; then
+	  GIT_COLOR="\e[0;92m"
+	else
+	  GIT_COLOR="\e[0;91m"
+	fi
+	echo -e "@ $GIT_COLOR$GIT_BRANCH $txtrst"
+}
+#source /usr/share/git-core/contrib/completion/git-prompt.sh
+
+PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(PARSE_GIT_BRANCH)\[\e[1;37m\n\[\e[1;37m\]└─>\[\e[0m\] '
+#PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\]\[\e[1;32m\]\[\e[5m \]%s\[\e[25m\]\[\e[0m\]")\[\e[1;37m\n\[\e[1;37m\]└─>\[\e[0m\] '
 
 #########################
-#												#
-#	ALIASES								#
+#
+#	ALIASES
 #-----------------------#
 
 if [[ -f ~/.alias ]]; then
