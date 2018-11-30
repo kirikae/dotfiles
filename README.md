@@ -36,6 +36,7 @@ NOTE: This has been tested and whatnot on a Fedora 29 Workstation and Minimal
 TODO
 ----
 
+* Update tmux to match colours everywhere else
 * Finish refactor of vimrc
 * Configure and finalise a mail client
 * Automate the deployment of this via Ansible
