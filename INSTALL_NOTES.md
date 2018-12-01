@@ -46,7 +46,7 @@ nmcli defice wifi connect <SSID> password <password>
 
 Personal .dotfiles, initial setup
 ```
-git clone git@github.com:kirikae/.dotfiles.git --recursive ~/Repositories/.dotfiles
+git clone https://github.com/kirikae/.dotfiles.git --recursive ~/Repositories/.dotfiles
 stow -t ~ -d ~/Repositories/.dotfiles vim
 rm -f ~/.bash{rc,_profile}
 stow -t ~ -d ~/Repositories/.dotfiles bash
@@ -121,7 +121,8 @@ libmpdclient-devel \
 libcurl-devel \
 wireless-tools-devel \
 gcc-c++ \
-clang
+clang \
+python
 
 mkdir ~/Repositories/polybar/build
 cd ~/Repositories/polybar/build
@@ -292,7 +293,7 @@ xcb-util-wm-devel \
 xcb-util-xrm \
 xcb-util-xrm-devel \
 check \
-check-devela \
+check-devel \
 xbacklight \
 xscreensaver \
 xcompmgr \
@@ -315,7 +316,6 @@ xcb-util-image-devel \
 xcb-util-wm-devel \
 xcb-util-cursor-devel \
 cairo-devel \
-libxcb-xrm-devel \
 i3-ipc \
 jsoncpp-devel \
 libmpdclient-devel \
@@ -339,6 +339,8 @@ gstreamer1-plugins-bad-free \
 gstreamer1-plugins-bad-free-gtk \
 gstreamer1-plugins-base \
 gstreamer1-plugins-good
+# libxcb-xrm-devel - this one doesn't exist (Wiz)
+
 ```
 
 These need to be done after the initial package installs... nVidia seems to cause some odd issues with X11
@@ -366,7 +368,8 @@ stow -t ~ -d ~/Repositories/.dotfiles x
 stow -t ~ -d ~/Repositories/.dotfiles bspwm
 stow -t ~ -d ~/Repositories/.dotfiles
 stow -t ~ -d ~/Repositories/.dotfiles
-
+vim 
+Then run the :PluginInstall command to enable the plugins
 ```
 
 ## General Hardware Configuration
@@ -390,8 +393,8 @@ Allow for Elite Dangerous to be played.
 ```
 sudo dnf install winetricks
 #Download and place protontricks in place
-mkdir ~/.local/share/Steam/compatibilitytools.d
-wget https://github.com/redmcg/wine/releases/download/ED_Proton_3.16-4_Beta/Proton_3.16-4_Beta_ED.tar.gz ~/.local/share/Steam/compatibilitytools.d
+mkdir -p ~/.local/share/Steam/compatibilitytools.d
+wget https://github.com/redmcg/wine/releases/download/ED_Proton_3.16-4_Beta/Proton_3.16-4_Beta_ED.tar.gz ~/.local/share/Steam/compatibilitytools.d/
 cd ~/.local/share/Steam/compatibilitytools.d/
 tar xf Proton_3.16-4_Beta_ED.tar.gz
 #Increase the File Descriptor limit in Fedora
@@ -411,4 +414,5 @@ You can check you're limits for FD via either `ulimit -n` or, in some case `ulim
 Next...
 ```
 protontricks 359320 dotnet40 win7
+# you've just restarted a session. where is this run from (it's not in a path)
 ```
