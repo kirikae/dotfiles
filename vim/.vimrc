@@ -90,6 +90,9 @@ Plug 'nicwest/vim-http'
 Plug 'metakirby5/codi.vim'
 Plug 'thinca/vim-quickrun'
 " }}}
+" Previews {{{
+Plug 'JamshedVesuna/vim-markdown-preview'
+" }}}
 " Exporting {{{
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
@@ -140,6 +143,9 @@ let g:goyo_width = '90%'
 let g:goyo_height = '90%'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+" }}}
+" vim-markdown-preview Settings {{{
+"let vim_markdown_preview_github=1            " Enable if you want to use grip for previews
 " }}}
 " Settings {{{
 colorscheme deep-space											" Colour Scheme in use
