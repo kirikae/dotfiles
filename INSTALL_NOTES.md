@@ -411,6 +411,9 @@ After the above, either log out, then back in, or reboot.
 
 You can check you're limits for FD via either `ulimit -n` or, in some case `ulimit -Hn` (the later may be different if `systemd` has anything to say...)
 
+For details about the Steam settings and gaming on Linux, see:
+https://steamcommunity.com/games/221410/announcements/detail/1696055855739350561
+
 Next...
 ```
 Install protontricks:
