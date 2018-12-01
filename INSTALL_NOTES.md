@@ -413,6 +413,8 @@ You can check you're limits for FD via either `ulimit -n` or, in some case `ulim
 
 Next...
 ```
+Install protontricks:
+wget https://raw.githubusercontent.com/Sirmentio/protontricks/master/protontricks && chmod +x protontricks
+sudo cp protontricks /usr/bin/protontricks
 protontricks 359320 dotnet40 win7
-# you've just restarted a session. where is this run from (it's not in a path)
 ```
