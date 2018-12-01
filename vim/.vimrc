@@ -91,7 +91,9 @@ Plug 'metakirby5/codi.vim'
 Plug 'thinca/vim-quickrun'
 " }}}
 " Previews {{{
-Plug 'JamshedVesuna/vim-markdown-preview'
+"Plug 'JamshedVesuna/vim-markdown-preview' "Commented, too many dependencies.
+"I want to avoid requiring something outside of 'base' repos and also not use
+"something like nodeJS or something else...
 " }}}
 " Exporting {{{
 Plug 'mattn/gist-vim'
