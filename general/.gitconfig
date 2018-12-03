@@ -5,3 +5,5 @@ name = Ben Colby-Sexton
 email = b.colby-sexton@gmail.com
 [github]
 	user = kirikae
+[merge]
+	tool = vimdiff
