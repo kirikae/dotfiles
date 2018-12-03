@@ -25,6 +25,11 @@ export BROWSER=firefox
 export GEM_HOME=$HOME/gems
 export PATH=$PATH:$HOME/gems/bin:$HOME/.bin
 
+# STEAM games stuff
+# Fallout 4
+WINEPREFIX=/games/SteamLibrary/steamapps/compatdata/377160/pfx
+WINE=/games/SteamLibrary/steamapps/common/Proton\ 3.16-4\ Beta\ ED/dist/bin/wine
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
