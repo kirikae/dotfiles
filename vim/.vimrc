@@ -150,10 +150,11 @@ autocmd! User GoyoLeave Limelight!
 "let vim_markdown_preview_github=1            " Enable if you want to use grip for previews
 " }}}
 " Settings {{{
-colorscheme deep-space											" Colour Scheme in use
-set termguicolors														" Enable true colour support
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+colorscheme deep-space											" Colour Scheme in use
+set t_Co=256                                " Enable 256 colours
+set termguicolors														" Enable true colour support
 set background=dark													" dark background
 set hidden																	" hide buffer without notice
 set mouse=a																	" enable mouse
@@ -178,9 +179,9 @@ syntax on
 autocmd BufNewFile,BufRead *.txt :set spell
 autocmd BufNewFile,BufRead *.tex :set spell
 autocmd BufNewFile,BufRead *.md :set spell
+ " }}}
 " }}}
-" }}}
-" Shortcuts and more... {{{
+"  Shortcuts and more... {{{
 cmap w!! w !sudo tee % > /dev/null
 map q :q<CR>
 map <Space> za
