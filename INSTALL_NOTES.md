@@ -416,8 +416,23 @@ https://steamcommunity.com/games/221410/announcements/detail/1696055855739350561
 
 Next...
 ```
+Install Proton:
+For better instructions for Fedora, try here:
+https://github.com/ValveSoftware/Proton/wiki/Build-instructions-(Fedora)
+
+#git clone https://github.com/ValveSoftware/Proton.git proton
+#cd proton
+#git submodule update --init wine dxvk ffmpeg openal-soft openvr
+#./build_proton.sh
+
 Install protontricks:
 wget https://raw.githubusercontent.com/Sirmentio/protontricks/master/protontricks && chmod +x protontricks
 sudo cp protontricks /usr/bin/protontricks
+
+cd <steamlibrary>/steamapps/compatdata/359320
+WINEPREFIX=$PWD/pfx winetricks corefonts dotnet40 vcrun2012 quartz
+WINEPREFIX=$PWD/pfx winecfg
+set default to win7
+
 protontricks 359320 dotnet40 win7
 ```
