@@ -13,7 +13,6 @@ alias aliasadd='vim ~/.alias'
 alias xresources='vim ~/.Xresources'
 alias polybarconf='vim ~/.config/polybar/config'
 alias reload='source ~/.bashrc'
-alias htop='htop -u kirikae'
 
 # Miscellaneous Commands
 alias ls="ls -v --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -hFX"
