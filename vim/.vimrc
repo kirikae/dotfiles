@@ -148,6 +148,9 @@ autocmd! User GoyoLeave Limelight!
 " }}}
 " vim-markdown-preview Settings {{{
 "let vim_markdown_preview_github=1            " Enable if you want to use grip for previews
+"let vim_markdown_preview_hotkey='<C-m>'      " Change the keybinding from '<C-p>'
+"let vim_markdown_preview_browser='Firefox'   " Change from Google Chrome
+"let vim_markdown_preview_use_xdg_open=1      " Fedora doesn't have `see`, use xdg-open instead
 " }}}
 " Settings {{{
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
