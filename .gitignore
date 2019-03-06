@@ -4,8 +4,8 @@ mpd/.config/mpd/pid
 mpd/.config/mpd/state
 mpd/.config/mpd/sticker.sql
 ncmpcpp/.config/ncmpcpp/error.log
-vim/.vim/plugged*
-vim/.vim/autoload*
+vim/.vim/plugged
+vim/.vim/autoload
 suckless/.st/modified
 suckless/.st/st
 suckless/.st/version
