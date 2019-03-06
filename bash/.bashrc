@@ -125,13 +125,20 @@ function PARSE_GIT_BRANCH {
 	else
 	  GIT_COLOR="\e[0;91m"
 	fi
-	echo -e "@ $GIT_COLOR$GIT_BRANCH $txtrst"
+	echo -e "╾╼ @ $GIT_COLOR$GIT_BRANCH $txtrst"
 }
-#source /usr/share/git-core/contrib/completion/git-prompt.sh
 
-PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(PARSE_GIT_BRANCH)\[\e[1;37m\n\[\e[1;37m\]└─>\[\e[0m\] '
-#PS1='\[\e[1;37m\]┌─\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(__git_ps1 "\[\e[0;31m\]@\[\e[0m\]\[\e[1;32m\]\[\e[5m \]%s\[\e[25m\]\[\e[0m\]")\[\e[1;37m\n\[\e[1;37m\]└─>\[\e[0m\] '
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+  source /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
 
+#PS1='\[\e[1;37m\]┌╼\e[0m\e[34m[\[\e[0m\e[0;33m\] \u \[\e[0m\]╾╼\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(PARSE_GIT_BRANCH)\[\e[1;37m\n\[\e[1;37m\]└╼\[\e[0m\] '
+PS1='\e[1;30m┌╼\e[0m\e[0;30m[\e[0m\e[34m\u\e[0m\e[0;30m]\e[0m\e[1;30m╾╼\e[0m\e[0;30m[\e[0m\e[34m\h\e[0m\e[0;30m]\e[0m$(__git_ps1 "\e[1;30m╾╼\e[0m\[\e[0;31m\]\e[0m\e[0;30m[\e[0m\[\e[0m\]\[\e[1;32m\]\[\e[5m \]%s\e[0m\e[0;30m ]\e[0m\[\e[25m\]\[\e[0m\]") \n\e[1;30m└╼\e[0m\e[0;30m[\e[0m\e[34m\w\e[0m\e[0;30m]\e[0m\n\e[1;30m⏵\e[0m '
+
+# ╾╼
+# ╿
+# ╽
+# ⏵
 #########################
 #
 #	ALIASES
