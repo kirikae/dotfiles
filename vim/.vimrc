@@ -31,6 +31,7 @@ call plug#load('vim-sensible')
 " }}}
 " Colours {{{
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'arcticicestudio/nord-vim'
 " }}}
 " Highlighting / Syntax {{{
 Plug 'Valloric/MatchTagAlways'
@@ -44,8 +45,6 @@ Plug 'whatyouhide/vim-lengthmatters'
 " }}}
 " UI {{{
 Plug 'itchyny/lightline.vim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'szw/vim-maximizer'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'ryanoasis/vim-devicons'
@@ -72,6 +71,8 @@ Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'simnalamburt/vim-mundo'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 " }}}
 " Project Structure {{{
 Plug 'tpope/vim-obsession'
@@ -155,7 +156,7 @@ autocmd! User GoyoLeave Limelight!
 " Settings {{{
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-colorscheme deep-space											" Colour Scheme in use
+colorscheme nord											" Colour Scheme in use
 set t_Co=256                                " Enable 256 colours
 set termguicolors														" Enable true colour support
 set background=dark													" dark background
@@ -189,6 +190,7 @@ cmap w!! w !sudo tee % > /dev/null
 map q :q<CR>
 map <Space> za
 nnoremap <C-T> :tabnew<CR>
+nnoremap <C-L> :NERDTreeToggle<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
