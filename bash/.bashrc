@@ -20,10 +20,6 @@ export PROJECT_HOME=$HOME/Repositories
 export VISUAL=vim
 export EDITOR=vim
 export BROWSER=firefox
-#export BROWSER=luakit
-
-export GEM_HOME=$HOME/gems
-export PATH=$PATH:$HOME/gems/bin:$HOME/.bin
 
 # STEAM games stuff
 # Fallout 4
@@ -75,72 +71,54 @@ export GROFF_NO_SGR=1   		# For Konsole and Gnome-terminal
 export LESS="--RAW-CONTROL-CHARS"
 
 #########################
-#
 #	PROMPT
 #-----------------------#
 
-
 # Syntactic sugar for ANSI escape sequences
-txtblk='\e[0;30m'	# Black - Regular
-txtred='\e[0;31m'	# Red
-txtgrn='\e[0;32m'	# Green
-txtylw='\e[0;33m'	# Yellow
-txtblu='\e[0;34m'	# Blue
-txtpur='\e[0;35m'	# Purple
-txtcyn='\e[0;36m'	# Cyan
-txtwht='\e[0;37m'	# White
-bldblk='\e[1;30m'	# Black - Bold
-bldred='\e[1;31m'	# Red
-bldgrn='\e[1;32m'	# Green
-bldylw='\e[1;33m'	# Yellow
-bldblu='\e[1;34m'	# Blue
-bldpur='\e[1;35m'	# Purple
-bldcyn='\e[1;36m'	# Cyan
-bldwht='\e[1;37m'	# White
-unkblk='\e[4;30m'	# Black - Underline
-undred='\e[4;31m'	# Red
-undgrn='\e[4;32m'	# Green
-undylw='\e[4;33m'	# Yellow
-undblu='\e[4;34m'	# Blue
-undpur='\e[4;35m'	# Purple
-undcyn='\e[4;36m'	# Cyan
-undwht='\e[4;37m'	# White
-bakblk='\e[40m'		# Black - Background
-bakred='\e[41m'		# Red
-badgrn='\e[42m'		# Green
-bakylw='\e[43m'		# Yellow
-bakblu='\e[44m'		# Blue
-bakpur='\e[45m'		# Purple
-bakcyn='\e[46m'		# Cyan
-bakwht='\e[47m'		# White
-txtrst='\e[0m'		# Text Reset
-
-function PARSE_GIT_BRANCH {
-  if ! git rev-parse --git-dir > /dev/null 2>&1; then
-	  return 0
-	fi
-	GIT_BRANCH=$(git branch 2> /dev/null | sed -n '/^\*/s/\* //p')
-	if git diff --quiet 2> /dev/null >&2; then
-	  GIT_COLOR="\e[0;92m"
-	else
-	  GIT_COLOR="\e[0;91m"
-	fi
-	echo -e "╾╼ @ $GIT_COLOR$GIT_BRANCH $txtrst"
-}
+txtblk='\[\e[0;30m\]'	# Black - Regular
+txtred='\[\e[0;31m\]'	# Red
+txtgrn='\[\e[0;32m\]'	# Green
+txtylw='\[\e[0;33m\]'	# Yellow
+txtblu='\[\e[0;34m\]'	# Blue
+txtpur='\[\e[0;35m\]'	# Purple
+txtcyn='\[\e[0;36m\]'	# Cyan
+txtwht='\[\e[0;37m\]'	# White
+bldblk='\[\e[1;30m\]'	# Black - Bold
+bldred='\[\e[1;31m\]'	# Red
+bldgrn='\[\e[1;32m\]'	# Green
+bldylw='\[\e[1;33m\]'	# Yellow
+bldblu='\[\e[1;34m\]'	# Blue
+bldpur='\[\e[1;35m\]'	# Purple
+bldcyn='\[\e[1;36m\]'	# Cyan
+bldwht='\[\e[1;37m\]'	# White
+unkblk='\[\e[4;30m\]'	# Black - Underline
+undred='\[\e[4;31m\]'	# Red
+undgrn='\[\e[4;32m\]'	# Green
+undylw='\[\e[4;33m\]'	# Yellow
+undblu='\[\e[4;34m\]'	# Blue
+undpur='\[\e[4;35m\]'	# Purple
+undcyn='\[\e[4;36m\]'	# Cyan
+undwht='\[\e[4;37m\]'	# White
+bakblk='\[\e[40m\]'		# Black - Background
+bakred='\[\e[41m\]'		# Red
+badgrn='\[\e[42m\]'		# Green
+bakylw='\[\e[43m\]'		# Yellow
+bakblu='\[\e[44m\]'		# Blue
+bakpur='\[\e[45m\]'		# Purple
+bakcyn='\[\e[46m\]'		# Cyan
+bakwht='\[\e[47m\]'		# White
+txtrst='\[\e[0m\]'		# Text Reset
 
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
   source /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
 
-#PS1='\[\e[1;37m\]┌╼\e[0m\e[34m[\[\e[0m\e[0;33m\] \u \[\e[0m\]╾╼\e[0m\e[34m[\[\e[0m\e[0;33m\] \w\[\e[0m\] \e[34m]\e[0m $(PARSE_GIT_BRANCH)\[\e[1;37m\n\[\e[1;37m\]└╼\[\e[0m\] '
-PS1='\[\e[1;30m\]┌╼\[\e[0m\]\[\e[0;30m\][\[\e[0m\]\[\e[34m\]\u\[\e[0m\]\[\e[0;30m\]]\[\e[0m\]\[\e[1;30m\]╾╼\[\e[0m\]\[\e[0;30m\][\[\e[0m\]\[\e[34m\]\h\[\e[0m\]\[\e[0;30m\]]\[\e[0m\]$(__git_ps1 "\[\e[1;30m\]╾╼\[\e[0m\]\[\[\e[0;31m\]\[\e[0m\]\[\e[0;30m\][\[\e[0m\]\[\[\e[0m\]\[\[\e[1;32m\]\[\[\e[1;32m\]%s\[\e[0m\]\[\e[0;30m\] ]\[\e[0m\]\[\[\e[25m\]\[\[\e[0m\]") \n\[\e[1;30m\]└╼\[\e[0m\]\[\e[0;30m\][\[\e[0m\]\[\e[34m\]\w\[\e[0m\]\[\e[0;30m\]]\[\e[0m\]\n\[\e[1;30m\]⏵\[\e[0m\] '
+GIT_PS1_SHOWCOLORHINTS=1
+GITPROMPT='$(__git_ps1 "\e[1;30m╾╼[\e[0m %s \e[0m\e[1;30m]\e[0m")'
 
-# ╾╼
-# ╿
-# ╽
-# ⏵
+PS1="${txtblk}┌╼${txtrst}${txtblk}[${txtrst}${txtblu}\u${txtrst}${txtblk}]${txtrst}${txtblk}╾╼${txtrst}${txtblk}${txtrst}${txtblu}\h${txtrst}${txtblk}]${txtrst}${GITPROMPT} \n${bldblk}└╼${txtrst}${txtblk}[${txtrst}${txtblu}\w${txtrst}${txtblk}]${txtrst}\n${bldblk}⏵${txtrst} "
+
 #########################
-#
 #	ALIASES
 #-----------------------#
 
