@@ -116,7 +116,7 @@ fi
 GIT_PS1_SHOWCOLORHINTS=1
 GITPROMPT='$(__git_ps1 "\e[1;30m╾╼[\e[0m %s \e[0m\e[1;30m]\e[0m")'
 
-PS1="${txtblk}┌╼${txtrst}${txtblk}[${txtrst}${txtblu}\u${txtrst}${txtblk}]${txtrst}${txtblk}╾╼${txtrst}${txtblk}${txtrst}${txtblu}\h${txtrst}${txtblk}]${txtrst}${GITPROMPT} \n${bldblk}└╼${txtrst}${txtblk}[${txtrst}${txtblu}\w${txtrst}${txtblk}]${txtrst}\n${bldblk}⏵${txtrst} "
+PS1="${txtblk}┌╼${txtrst}${txtblk}[${txtrst}${txtblu}\u${txtrst}${txtblk}]${txtrst}${txtblk}╾╼${txtrst}${txtblk}[${txtrst}${txtblu}\h${txtrst}${txtblk}]${txtrst}${GITPROMPT} \n${txtblk}└╼${txtrst}${txtblk}[${txtrst}${txtblu}\w${txtrst}${txtblk}]${txtrst}\n${txtblk}⏵${txtrst} "
 
 #########################
 #	ALIASES
