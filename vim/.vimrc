@@ -42,6 +42,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'valloric/vim-operator-highlight'
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'whatyouhide/vim-lengthmatters'
+Plug 'pallets/jinja'
 " }}}
 " UI {{{
 Plug 'itchyny/lightline.vim'
