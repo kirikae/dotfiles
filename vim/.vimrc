@@ -142,6 +142,9 @@ let g:ansible_unindent_after_newline = 1	"Reset indentation after two newlines
 let g:ansible_extra_keywords_highlight = 1
 let g:ansible_yamlKeyName = 'yamlKey'
 " }}}
+" whatyouhide/vim-lengthmatters {{{
+let g:lengthmatters_on_by_default = 0
+" }}}
 " junegunn/goyo specific settings {{{
 let g:goyo_width = '90%'
 let g:goyo_height = '90%'
