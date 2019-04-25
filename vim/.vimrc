@@ -51,7 +51,7 @@ Plug 'pgdouyon/vim-evanesco'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kristijanhusak/defx-icons'
 Plug 'terryma/vim-expand-region'
-"Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'mhinz/vim-sayonara', {'on': 'Sayonara'}
 Plug 'junegunn/goyo.vim'
 " }}}
@@ -106,7 +106,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " }}}
 " Diagnostics {{{
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 " }}}
 " }}}
 " FileType {{{
@@ -193,11 +193,17 @@ autocmd BufNewFile,BufRead *.md :set spell
 cmap w!! w !sudo tee % > /dev/null
 map q :q<CR>
 map <Space> za
-nnoremap <C-T> :tabnew<CR>
-nnoremap <C-L> :NERDTreeToggle<CR>
+nnoremap <C-T> :NERDTreeTabsToggle<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
 nnoremap <F9> :Goyo<CR>
+" vim-tmux-navigator SHORTCUTS
+"let g:tmux_navigator_no_mappings = 1
+"nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<CR>
+"nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<CR>
+"nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<CR>
+"nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<CR>
+"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<CR>
 " }}}
 
